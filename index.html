@@ -38,7 +38,7 @@
         var resultVal = "";
 
         if(genderValue == "female") {
-            resultVal += "Brk... ";
+            if(Math.random() > 0.6) resultVal += "Brk... ";
             resultVal = resultVal + firstName.value + " " + lastName.value;
         } else {
             resultVal =  (Math.random() < 0.8 ? "Brko " : "Chief ") + lastName.value;
