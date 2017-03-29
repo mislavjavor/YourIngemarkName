@@ -41,7 +41,7 @@
             resultVal += "Brk... ";
             resultVal = resultVal + firstName.value + " " + lastName.value;
         } else {
-            resultVal = "Brko " + lastName.value;
+            resultVal =  (Math.random() < 0.8 ? "Brko " : "Chief ") + lastName.value;
         }
         result.innerHTML = "Your Ingemark name is: " + resultVal;
     }
