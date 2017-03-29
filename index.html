@@ -1,12 +1,78 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Your Ingemark Name</title>
-    </head>
-    <body style="background: #33d">
-        <div>
-            How will the boss man call you?
-        </div>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <title>Your Ingemark Name</title>
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    
+</head>
+<style media="screen">
+    body {
+        width: 50%;
+        margin: 0 auto;
+        margin-top: 100px;
+        font-family: 'Slabo 27px', serif;
+        background: #2a3b7d;
+        text-align: center;
+        color: #fff;
+        font-size: 30px;
+    }
+
+    #selector_box {
+        margin-top: 20px
+    }
+
+    #generic_label {
+        margin-top: 50px
+    }
+</style>
+    
+<script>
+    function buttonClicked() {
+        var firstName = document.getElementById("firstname");
+        var lastName = document.getElementById("lastname");
+        var result = document.getElementById("result_label");
+        var gender = document.getElementById("selector_box");
+
+        var genderValue = gender.options[gender.selectedIndex].value;
+        var resultVal = "";
+
+        if(genderValue == "female") {
+            resultVal += "Br... ";
+            resultVal = resultVal + firstName.value + " " + lastName.value;
+        } else {
+            resultVal = "Brko " + lastName.value;
+        }
+        result.innerHTML = "Your Ingemark name is: " + resultVal;
+    }
+</script>
+
+<body style="">
+    <div style="margin: 0 auto; font-size: 55px; text-align: center;">
+        WHAT IS YOUR INGEMARK NAME?
+    </div>
+
+    <div id="generic_label"> Gender </div>
+
+    <div>
+        <select id="selector_box">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+    </div>
+    
+    <form style="margin-top: 30px">
+        First name:<br>
+    <input id="firstname" type="text" name="firstname"><br>
+        Last name:<br>
+    <input id="lastname" type="text" name="lastname">
+    </form>
+
+    <button onclick="buttonClicked()"> Submit </button>  
+
+    <div id="result_label" style="margin-top: 40px"> </div> 
+
+</body>
+
 </html>
